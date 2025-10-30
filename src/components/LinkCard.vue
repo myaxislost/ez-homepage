@@ -7,7 +7,8 @@ defineProps<Card>();
 
 <template>
   <UiBlock class="card">
-    <fa-icon :icon="icon" class="" />
+    <img v-if="icon && icon.startsWith('http')" :src="icon" style="width: 100%; max-width: 40px" />
+    <fa-icon v-else-if="icon" :icon="icon" />
     <span class="card-title gap">
       <span>{{ title ?? url }}</span>
       <a class="small-button" :href="url" target="_blank">{{ url.split('//')[1] }}</a>
@@ -18,7 +19,7 @@ defineProps<Card>();
 <style scoped>
 .card {
   display: grid;
-  grid-template-columns: min-content minmax(0, 1fr);
+  grid-template-columns: max-content minmax(0, 1fr);
   align-items: center;
   gap: calc(var(--gap) * 2);
   overflow: hidden;

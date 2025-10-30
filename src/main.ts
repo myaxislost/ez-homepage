@@ -12,6 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import {
   faChartLine,
   faDownload,
+  faFilm,
   faHardDrive,
   faHeadphonesAlt,
   faRotate,
@@ -27,6 +28,7 @@ library.add(
   faWindowMaximize,
   faHardDrive,
   faRotate,
+  faFilm,
 );
 
 const app = createApp(App);
